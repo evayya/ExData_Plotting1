@@ -15,12 +15,7 @@ data_sub <- subset(data_all, Date == "2007-02-01" | Date == "2007-02-02")
 
 # Construct the plot and save it to a PNG file with a width of 480x480 pixels
 # Create plot on screen device   width=480,height=480,units="px"
+png("plot1.png", width=480, height = 480, units = "px")
 hist(data_sub$Global_active_power, col = "red", main = "Global Active Power", 
         xlab = "Global Active Power (kilowatts)", ylab = "Frequency")
-#with(data_sub, hist(Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)", ylab = "Frequency")
-
-# Copy my plot to a PNG file and close the PNG graphic device
-#dev.list() #dev.cur() #dev.set(2)
-png("plot1.png", width=480, height = 480, units = "px")
-#dev.copy(png, file = "plot1.png", width=480, height = 480, units = "px")
 dev.off()

@@ -17,6 +17,7 @@ data_all$Date <- as.Date(data_all$Date, format="%d/%m/%Y") #convert to "Date" cl
 data_sub <- subset(data_all, Date == "2007-02-01" | Date == "2007-02-02")
 
 #plot 2x2 and save png
+png("plot4.png", width=480, height = 480, units = "px")
 par(mfrow=c(2,2))
 
 plot(data_sub$datetime, data_sub$Global_active_power, type="l", pch=20, xlab ="", ylab = "Global Active Power")
@@ -30,5 +31,5 @@ legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"
 
 plot(data_sub$datetime, data_sub$Global_reactive_power, type="l", pch=20, xlab ="datetime", ylab = "Global_reactive_power")
 
-dev.copy(png, file = "plot4.png", width=480, height = 480, units = "px")
+#dev.copy(png, file = "plot4.png", width=480, height = 480, units = "px")
 dev.off()

@@ -16,7 +16,7 @@ data_sub <- subset(data_all, Date == "2007-02-01" | Date == "2007-02-02")
 # Convert date to day data_sub$Day <- weekdays(as.Date(data_sub$Date))
 
 #plot and save png
-plot(data_sub$datetime, data_sub$Global_active_power, type="l", pch=20, xlab ="", ylab = "Global Active Power (kilowatts)")
 png("plot2.png", width=480, height = 480, units = "px")
+plot(data_sub$datetime, data_sub$Global_active_power, type="l", pch=20, xlab ="", ylab = "Global Active Power (kilowatts)")
 dev.off()
      
